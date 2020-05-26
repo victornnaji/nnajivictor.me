@@ -30,7 +30,7 @@ body{
     &.hidden {
       overflow: hidden;
     }
-    &.blur {
+    &#blur {
       overflow: hidden;
       #root > #content > * {
         filter: blur(5px) brightness(0.7);

@@ -81,7 +81,7 @@ const Loading = ({finishLoading}) => {
 
     return (
         <StyledContainer className="loader">
-            {/* <Helmet bodyAttributes={{ class: `hidden` }} /> */}
+            {/* <Helmet bodyAttributes={{ class: `hidden` }} />z */}
             <StyledLogo isMounted={isMounted}>
                <LoaderIcon />
             </StyledLogo>
@@ -103,16 +103,16 @@ const StyledContainer = styled.div`
 
 const StyledLogo = styled.div`
   .ml4 {
-  position: absolute;
-  display: flex;
+    position: absolute;
+    display: flex;
     align-items: center;
-justify-content: center;
-}
-.ml4 .letters {
-  position: absolute;
-  opacity: 0; 
-}
-
+    justify-content: center;
+  }
+  .ml4 .letters {
+    position: absolute;
+    opacity: 0;
+    color: var(--secondary-color);
+  }
 `
 
 export default Loading

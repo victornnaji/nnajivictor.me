@@ -5,7 +5,9 @@ import Footer from './Footer';
 import styled from 'styled-components';
 import { GlobalStyle, theme } from "@styles";
 import Loading from "./Loading";
-const { colors, fontSizes, fonts } = theme;
+import Head from "./head";
+import Nav from "./Nav";
+const { fontSizes, fonts } = theme;
 
 if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
@@ -13,6 +15,7 @@ if (typeof window !== 'undefined') {
 }
 
 const Layout = ({ children, location }) => {
+  
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
@@ -30,9 +33,9 @@ const Layout = ({ children, location }) => {
         }
       }, 0);
     }
-  }, [isLoading]);
+  }, [isLoading, location.hash]);
 
-  const data = useStaticQuery(graphql`
+  const {site} = useStaticQuery(graphql`
   query LayoutQuery{
     site{
       siteMetadata{
@@ -46,15 +49,23 @@ const Layout = ({ children, location }) => {
 
   return (
     <div id="root">
+       <Head metadata={site.siteMetadata} />
+
       <GlobalStyle />
+
+      <SkipToContent href="#content">Skip to Content</SkipToContent>
+      
       {isLoading && isHome ? (
         <Loading finishLoading={() => setIsLoading(false)}/>
       ) : (
          <StyledContent>
-         <div id="content">
-             {children}
-             <Footer />
-         </div>
+          <Nav isHome={isHome} />
+
+
+          <div id="content">
+              {children}
+              <Footer />
+          </div>
        </StyledContent>
       )}
     </div>
@@ -64,6 +75,36 @@ const Layout = ({ children, location }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+const SkipToContent = styled.a`
+  position: absolute;
+  top: auto;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -99;
+  &:focus,
+  &:active {
+    outline: 0;
+    color: var(--secondary-color);
+    background-color: var(--bg);
+    border-radius: ${theme.borderRadius};
+    padding: 18px 23px;
+    font-size: ${fontSizes.sm};
+    font-family: ${fonts.SFMono};
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: ${theme.transition};
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    z-index: 99;
+  }
+`;
 
 const StyledContent = styled.div`
   display: flex;
