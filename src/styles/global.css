@@ -1,0 +1,29 @@
+
+body {
+    background-color: var(--bg);
+    color: var(--primary-color) !important;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.3;
+
+}
+
+body.light{
+    --bg: #ffffff;
+    --primary-color: #020c1b;
+    --heading-color: #0a192f;
+    --link-color: #0090ff;
+    --secondary-color: var(--link-color);
+}
+
+body.dark{
+    --bg: #0a192f;
+    --primary-color: #ccd6f6;
+    --heading-color: #e6f1ff;
+    --link-color: #64ffda;
+    --secondary-color: var(--link-color);
+}
