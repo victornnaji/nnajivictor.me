@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Logo from './logo';
 import Menu from './menu';
+import Toogle from '../components/Toggle'
 const { colors, fontSizes, fonts, loaderDelay } = theme;
 
 const DELTA = 5;
@@ -113,6 +114,31 @@ class Nav extends Component {
               </TransitionGroup>
 
               <TransitionGroup component={null}>
+                  {isMounted && (
+                    <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+                      <div
+                        style={{
+                          transitionDelay: `${
+                            isHome ? navLinks.length * 100 : 0
+                          }ms`,
+                        }}
+                      >
+                        {/* <StyledResumeButton
+                          href="/resume.pdf"
+                          target="_blank"
+                          rel="nofollow noopener noreferrer"
+                        >
+                          Resume
+                        </StyledResumeButton> */}
+                        {/* <StyledToggle> */}
+                            <Toogle />
+                        {/* </StyledToggle> */}
+                      </div>
+                    </CSSTransition>
+                  )}
+                </TransitionGroup>
+
+              <TransitionGroup component={null}>
                 {isMounted && (
                   <CSSTransition classNames={fadeClass} timeout={timeout}>
                     <StyledHamburger onClick={this.toggleMenu}>
@@ -141,27 +167,18 @@ class Nav extends Component {
                               transitionDelay: `${isHome ? i * 100 : 0}ms`,
                             }}
                           >
-                            <StyledListLink to={url}>{name}</StyledListLink>
+                            {name === "blog" ? (
+                              <Link to={url}>{name}</Link>
+                            ) : (
+                              <StyledListLink to={url}>{name}</StyledListLink>
+                            )}
                           </StyledListItem>
                         </CSSTransition>
                       ))}
                   </TransitionGroup>
                 </StyledList>
 
-                <TransitionGroup component={null}>
-              {isMounted && (
-                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                  <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                    <StyledResumeButton
-                      href="/resume.pdf"
-                      target="_blank"
-                      rel="nofollow noopener noreferrer">
-                      Resume
-                    </StyledResumeButton>
-                  </div>
-                </CSSTransition>
-              )}
-            </TransitionGroup>
+               
               </StyledLink>
             </StyledNav>
 
