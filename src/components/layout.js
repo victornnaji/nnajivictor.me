@@ -7,6 +7,7 @@ import { GlobalStyle, theme } from "@styles";
 import Loading from "./Loading";
 import Head from "./head";
 import Nav from "./Nav";
+import Social from "./Social";
 const { fontSizes, fonts } = theme;
 
 if (typeof window !== 'undefined') {
@@ -15,7 +16,7 @@ if (typeof window !== 'undefined') {
 }
 
 const Layout = ({ children, location }) => {
-  
+
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
@@ -60,7 +61,7 @@ const Layout = ({ children, location }) => {
       ) : (
          <StyledContent>
           <Nav isHome={isHome} />
-
+          <Social isHome={isHome} />
 
           <div id="content">
               {children}

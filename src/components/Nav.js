@@ -332,11 +332,11 @@ const StyledListItem = styled.li`
 const StyledListLink = styled(Link)`
   padding: 12px 10px;
 `;
-const StyledResumeButton = styled.a`
-  ${mixins.smallButton};
-  margin-left: 10px;
-  font-size: ${fontSizes.smish};
-`;
+// const StyledResumeButton = styled.a`
+//   ${mixins.smallButton};
+//   margin-left: 10px;
+//   font-size: ${fontSizes.smish};
+// `;
 
 
 export default Nav
