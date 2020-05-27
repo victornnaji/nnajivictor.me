@@ -1,97 +1,122 @@
 import React from 'react'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
-import DarkModeToggle from './DarkModeToggle';
 import styled from 'styled-components';
+import {InlineIcon } from '@iconify/react';
+import sunBehindSmallCloud from '@iconify/icons-openmoji/sun-behind-small-cloud';
+import moonIcon from '@iconify/icons-feather/moon';
+import { media } from '@styles';
 
-
-
-export default () => (
+export default ({menuOpen}) => (
   <ThemeToggler>
     {({ theme, toggleTheme }) => (
-      <Toggler>
-        <button type="button" onClick={e=> toggleTheme('light')}>
-          ☀
-        </button>
-          <DarkModeToggle checked={theme === 'dark'} onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')} />
-        <button type="button" onClick={e => toggleTheme('dark')}>
-          ☾
-        </button>
+      <Toggler menuOpen={menuOpen}>
+          <label>
+            <input class='toggle-checkbox' type='checkbox' 
+              onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+              checked={theme === 'dark'}
+            />
+            <div class='toggle-slot'>
+              <div class='sun-icon-wrapper'>
+                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false">
+                  <InlineIcon icon={sunBehindSmallCloud} />
+                </div>
+              </div>
+              <div class='toggle-button'></div>
+              <div class='moon-icon-wrapper'>
+                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false">
+                <InlineIcon icon={moonIcon} />
+                </div>
+              </div>
+            </div>
+          </label>
       </Toggler>
     )}
   </ThemeToggler>
 );
 
 const Toggler = styled.div`
-display: flex;
-button {
-    color: #006688;
-    background-color: transparent;
-    border: none;
-    font-size: 1em;
-    padding: 0;
-  }
-
-  .dark-mode-toggle {
-  display: flex;
-  margin: 0 auto;
-  & > button {
-    font-size: 1.2em;
-    background: none;
-    border: none;
-    color: #ffe600;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    &:last-child {
-      color: #666;
-    }
-
-    &:focus {
-      outline: none;
-    }
-  }
+ opacity: ${props => (props.menuOpen ? '0' : '1')};
+ transition: all .6s;
+.toggle-checkbox {
+  display: none;
 }
 
-.toggle-control {
+.toggle-slot{
   position: relative;
-  padding: 0 4px;
-  display: flex;
-  align-items: center;
+  height: 36px;
+  width: 72px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 26px;
+  background-color: inherit;
+  transition: background-color 250ms;
 }
 
-input[type='checkbox'].dmcheck {
-  width: 40px;
-  height: 10px;
-  background: #555;
-  position: relative;
-  border-radius: 5px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  vertical-align: 2px;
-  outline: none;
-
-  &:checked + label {
-    left: 30px;
-  }
-
-  &:focus-visible {
-    outline: solid 2px white;
-  }
-
-  & + label {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: absolute;
-    left: 2px;
-    background: #fff;
-    opacity: 0.9;
-    background-color: #f6f6f6;
-  }
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: var(--bg);
 }
+
+.toggle-button {
+  position: absolute;
+  transform: translate(43px, 6px);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  line-height: 4.6px;
+  background-color: #ffeccf;
+  box-shadow:rgb(252, 234, 43) 0px 0px 0px 3px inset;
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #485367;
+  box-shadow:#fff 0px 0px 0px 3px inset;
+  transform: matrix(1, 0, 0, 1, 7, 7);
+}
+
+.sun-icon {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  color: #ffbb52;
+}
+
+.sun-icon-wrapper {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  opacity: 1;
+  transform: translate(4px, 4px) rotate(15deg);
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(8px, 4px) rotate(0deg);
+}
+
+.moon-icon {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  color: var(--primary-color);
+}
+
+.moon-icon-wrapper {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  opacity: 0;
+  transform: translate(40px, 4px) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(44px, 4px) rotate(-15deg);
+  ${media.tablet`transform: translate(42px, 7px) rotate(0deg);`};
+}
+
+
 `;
 

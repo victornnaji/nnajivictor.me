@@ -42,7 +42,7 @@ const NavLinks = styled.nav`
   width: 100%;
   flex-direction: column;
   text-align: center;
-  color: ${colors.lightestSlate};
+  color: var(--secondary-color);
 `;
 const NavList = styled.ol`
   padding: 0;
@@ -63,7 +63,7 @@ const NavListItem = styled.li`
   &:before {
     display: block;
     content: '0' counter(item) '.';
-    color: ${colors.green};
+    color: var(--primary-color);
     font-size: ${fontSizes.sm};
     margin-bottom: 5px;
   }

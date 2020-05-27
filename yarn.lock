@@ -981,6 +981,21 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@iconify/icons-feather@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-feather/-/icons-feather-1.0.9.tgz#bc6fc4928511f583e2879b9d8ad418c38ef7a1d3"
+  integrity sha512-74LTZsZp9y8Qd+fsOTG4SRTp50pW6f97VB2i4G5UGoRTA3GIe9BMV9Ue1rihEgBAWRuN761CgVLkWXBdxyHazA==
+
+"@iconify/icons-openmoji@^1.0.54":
+  version "1.0.54"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-openmoji/-/icons-openmoji-1.0.54.tgz#3797dfd5cb00067ac03266e666578373506d8e67"
+  integrity sha512-IHs3S7KLhYt4Qv6gvetvoJzRiJ/AGbCwG9fDgz0vI/168oxmDc4ts1v52CzOn8Fr/5Vp9K0rKN60q+QayUK6bQ==
+
+"@iconify/react@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-1.1.3.tgz#ebe4d3e5f5dea23cd6a9634acd7a0a25c7414a59"
+  integrity sha512-ReZNJyr89AfED6XZIXkhsJiNv2taT3j1cTo1HVPHMsrKOz6gAYdXtD2kDWF6+GVoFUxpmnO0fMcA6yCyTf6Tow==
+
 "@jest/types@^25.5.0":
   version "25.5.0"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-25.5.0.tgz#4d6a4793f7b9599fc3680877b856a97dbccf2a9d"

@@ -130,9 +130,7 @@ class Nav extends Component {
                         >
                           Resume
                         </StyledResumeButton> */}
-                        {/* <StyledToggle> */}
-                            <Toogle />
-                        {/* </StyledToggle> */}
+                            <Toogle menuOpen={menuOpen}/>
                       </div>
                     </CSSTransition>
                   )}
