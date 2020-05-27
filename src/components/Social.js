@@ -1,10 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { socialMedia } from '@config';
 import Side  from '@components/Side';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { theme } from '@styles';
 
 const Social = ({ isHome }) => (
     <Side isHome={isHome} orientation="left">

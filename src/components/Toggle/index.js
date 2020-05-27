@@ -11,19 +11,19 @@ export default ({menuOpen}) => (
     {({ theme, toggleTheme }) => (
       <Toggler menuOpen={menuOpen}>
           <label>
-            <input class='toggle-checkbox' type='checkbox' 
+            <input className='toggle-checkbox' type='checkbox' 
               onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
               checked={theme === 'dark'}
             />
-            <div class='toggle-slot'>
-              <div class='sun-icon-wrapper'>
-                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false">
+            <div className='toggle-slot'>
+              <div className='sun-icon-wrapper'>
+                <div className="iconify sun-icon" data-icon="feather-sun" data-inline="false">
                   <InlineIcon icon={sunBehindSmallCloud} />
                 </div>
               </div>
-              <div class='toggle-button'></div>
-              <div class='moon-icon-wrapper'>
-                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false">
+              <div className='toggle-button'></div>
+              <div className='moon-icon-wrapper'>
+                <div className="iconify moon-icon" data-icon="feather-moon" data-inline="false">
                 <InlineIcon icon={moonIcon} />
                 </div>
               </div>

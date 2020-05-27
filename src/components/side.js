@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { theme, media } from '@styles';
-const { colors, loaderDelay } = theme;
+const { loaderDelay } = theme;
 
 const StyledContainer = styled.div`
   width: 40px;
@@ -26,7 +26,7 @@ const Side = ({ children, isHome, orientation }) => {
     }
     const timeout = setTimeout(() => setIsMounted(true), loaderDelay);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [isHome]);
 
   return (
     <StyledContainer orientation={orientation}>

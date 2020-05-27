@@ -9,9 +9,7 @@ import {
   IconGitHub,
   IconInstagram,
   IconLinkedin,
-  IconLoader,
   IconLocation,
-  IconLogo,
   IconPlayStore,
   IconStar,
   IconTwitter,
@@ -36,12 +34,8 @@ const FormattedIcon = ({ name }) => {
       return <IconInstagram />;
     case 'Linkedin':
       return <IconLinkedin />;
-    case 'Loader':
-      return <IconLoader />;
     case 'Location':
       return <IconLocation />;
-    case 'Logo':
-      return <IconLogo />;
     case 'PlayStore':
       return <IconPlayStore />;
     case 'Star':
