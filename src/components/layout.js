@@ -8,6 +8,7 @@ import Loading from "./Loading";
 import Head from "./head";
 import Nav from "./Nav";
 import Social from "./Social";
+import {Banner} from '@components';
 const { fontSizes, fonts } = theme;
 
 if (typeof window !== 'undefined') {
@@ -36,7 +37,7 @@ const Layout = ({ children, location }) => {
     }
   }, [isLoading, location.hash]);
 
-  const {site} = useStaticQuery(graphql`
+  const {site, display} = useStaticQuery(graphql`
   query LayoutQuery{
     site{
       siteMetadata{
@@ -45,8 +46,17 @@ const Layout = ({ children, location }) => {
         siteUrl
       }
     }
-  }  
+  display:allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/Banner/"}}) {
+    nodes {
+      frontmatter {
+        show
+      }
+    }
+  }
+}  
   `)
+
+  const {show} = display.nodes[0].frontmatter;
 
   return (
     <div id="root">
@@ -60,7 +70,8 @@ const Layout = ({ children, location }) => {
         <Loading finishLoading={() => setIsLoading(false)}/>
       ) : (
          <StyledContent>
-          <Nav isHome={isHome} />
+          <Banner />
+          <Nav isHome={isHome} show={show}/>
           <Social isHome={isHome} />
 
           <div id="content">

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
 import { Link } from 'gatsby';
 import {throttle} from '../utils';
-import { navLinks, navHeight } from '@config';
+import { navLinks, navHeight} from '@config';
 import { Helmet } from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Logo from './logo';
@@ -20,6 +20,8 @@ class Nav extends Component {
         scrollDirection: 'none',
         lastScrollTop: 0,
     };
+
+    
 
     componentDidMount() {
         setTimeout(
@@ -38,6 +40,7 @@ class Nav extends Component {
         window.removeEventListener('resize', () => this.handleResize());
         window.removeEventListener('keydown', e => this.handleKeydown(e));
       }
+
 
       toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
 
@@ -61,7 +64,7 @@ class Nav extends Component {
             this.setState({ scrollDirection: 'up' });
           }
         }
-    
+
         this.setState({ lastScrollTop: fromTop });
       };
 
@@ -80,17 +83,19 @@ class Nav extends Component {
           this.toggleMenu();
         }
       };
+
+
     
 
     render() {
-        const { isMounted, menuOpen, scrollDirection } = this.state
+        const { isMounted, menuOpen, scrollDirection} = this.state
         const { isHome } = this.props
         const timeout = isHome ? loaderDelay : 0
         const fadeClass = isHome ? "fade" : ""
-        const fadeDownClass = isHome ? "fadedown" : ""
+        const fadeDownClass = isHome ? "fadedown" : "";
 
         return (
-          <StyledContainer scrollDirection={scrollDirection}>
+          <StyledContainer scrollDirection={scrollDirection} show={this.props.show}>
             <Helmet>
               <body id={menuOpen ? "blur" : "notblur"} />
             </Helmet>
@@ -187,12 +192,11 @@ class Nav extends Component {
 }
 
 
-
-
 const StyledContainer = styled.header`
   ${mixins.flexBetween};
   position: fixed;
-  top: 0;
+  top: ${props => props.show ? '40px' : '0px'};
+  ${media.thone`top:${props => props.show ? '60px' : '0px'};`}
   padding: 0px 50px;
   background-color: var(--bg);
   transition: ${theme.transition};
@@ -202,13 +206,13 @@ const StyledContainer = styled.header`
   user-select: auto !important;
   width: 100%;
   height: ${props => (props.scrollDirection === 'none' ? theme.navHeight : theme.navScrollHeight)};
-  box-shadow: ${props =>
-    props.scrollDirection === 'up' ? `0 10px 30px -10px ${colors.shadowNavy}` : 'none'};
+  /* box-shadow: ${props =>
+    props.scrollDirection === 'up' ? `0 10px 30px -10px ${colors.shadowNavy}` : 'none'}; */
   transform: translateY(
     ${props => (props.scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px')}
   );
   ${media.desktop`padding: 0 40px;`};
-  ${media.tablet`padding: 0 25px;`};
+  ${media.tablet`padding: 0 15px;`};
 `;
 const StyledNav = styled.nav`
   ${mixins.flexBetween};
@@ -322,21 +326,16 @@ const StyledListItem = styled.li`
   font-size: ${fontSizes.smish};
   counter-increment: item 1;
   color: var(--primary-color);
-  &:before {
+  /* &:before {
     content: '0' counter(item) '.';
     text-align: right;
     color: var(--secondary-color);
     font-size: ${fontSizes.xs};
-  }
+  } */
 `;
 const StyledListLink = styled(Link)`
   padding: 12px 10px;
 `;
-// const StyledResumeButton = styled.a`
-//   ${mixins.smallButton};
-//   margin-left: 10px;
-//   font-size: ${fontSizes.smish};
-// `;
 
 
 export default Nav

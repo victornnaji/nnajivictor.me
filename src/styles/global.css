@@ -17,8 +17,8 @@ body.light{
     --bg: #ffffff;
     --primary-color: #020c1b;
     --heading-color: #0a192f;
-    /* --link-color: #0090ff; */
-    --link-color: #0d48a0;
+    --link-color: #5b3acc;
+    /* --link-color: #0d48a0; */
     --secondary-color: var(--link-color);
     /* transition: background-color 0.1s ease; */
 }

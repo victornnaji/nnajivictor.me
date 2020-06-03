@@ -11,6 +11,8 @@ const StyledContainer = styled.div`
   bottom: 0;
   left: ${props => (props.orientation === 'left' ? '40px' : 'auto')};
   right: ${props => (props.orientation === 'left' ? 'auto' : '40px')};
+  top: ${props => (props.orientation === 'top' ? '40px' : 'auto')};
+  bottom: ${props => (props.orientation === 'top' ? 'auto' : '40px')};
   z-index: 10;
   color: var(--primary-color);
   ${media.desktop`right: 25px;`};

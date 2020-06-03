@@ -60,13 +60,13 @@ const NavListItem = styled.li`
     font-size: ${fontSizes.md};
   `};
   ${media.tiny`font-size: ${fontSizes.smish};`};
-  &:before {
+  /* &:before {
     display: block;
     content: '0' counter(item) '.';
     color: var(--primary-color);
     font-size: ${fontSizes.sm};
     margin-bottom: 5px;
-  }
+  } */
 `;
 const NavLink = styled(Link)`
   ${mixins.link};

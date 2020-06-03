@@ -21,7 +21,7 @@ const theme = {
     md: "16px",
     lg: "18px",
     xl: "20px",
-    xxl: "22px",
+    xxl: "22px", 
     h3: "32px",
   },
 
@@ -29,7 +29,7 @@ const theme = {
   transition: "all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)",
 
   borderRadius: "3px",
-  navHeight: "100px",
+  navHeight: "70px",
   navScrollHeight: "70px",
   margin: "20px",
 

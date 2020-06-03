@@ -37,7 +37,6 @@ const Logo = () => {
           <span className="word">N</span>
           <span className="word">V</span>
           <span className="word dot"></span>
-          {/* <span className="line"></span> */}
         </div>
       </LogoBox>
     )
