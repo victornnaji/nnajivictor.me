@@ -9,15 +9,15 @@ import {useStaticQuery, graphql} from 'gatsby';
 const Banner = () => {
     const data = useStaticQuery(graphql`
     {
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/Banner/"}}) {
-      nodes {
-        frontmatter {
-          show
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/Banner/"}}) {
+        nodes {
+          frontmatter {
+            show
+          }
+          html
         }
-        html
       }
     }
-  }
 `)
 
     const {frontmatter, html} = data.allMarkdownRemark.nodes[0];
