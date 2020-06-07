@@ -62,7 +62,16 @@ const Hero = ({data}) => {
             </StyledContainer>
 
             <StyledScroll to="/#about">
-                <AnimatedScroll />
+                <TransitionGroup component={null}>
+                    {isMounted && (
+                        <CSSTransition classNames="fadeup" timeout={loaderDelay}>
+                            <div style={{ transitionDelay: '1000ms' }}>
+                                <AnimatedScroll />
+                            </div>
+                       </CSSTransition>
+                   )}
+                </TransitionGroup>
+                
             </StyledScroll>
 
         </StyledFragment>
