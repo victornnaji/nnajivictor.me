@@ -71,7 +71,7 @@ const Layout = ({ children, location }) => {
       ) : (
          <StyledContent>
           <Banner />
-          <Nav isHome={isHome} show={show}/>
+           <Nav isHome={isHome} show={show}/>
           <Social isHome={isHome} />
 
           <div id="content">

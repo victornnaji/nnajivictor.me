@@ -35,11 +35,11 @@ class Nav extends Component {
         );
       }
     
-      componentWillUnmount() {
-        window.removeEventListener('scroll', () => this.handleScroll());
-        window.removeEventListener('resize', () => this.handleResize());
-        window.removeEventListener('keydown', e => this.handleKeydown(e));
-      }
+      // componentWillUnmount() {
+      //   window.removeEventListener('scroll', () => this.handleScroll());
+      //   window.removeEventListener('resize', () => this.handleResize());
+      //   window.removeEventListener('keydown', e => this.handleKeydown(e));
+      // }
 
 
       toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
