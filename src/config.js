@@ -1,6 +1,6 @@
 module.exports = {
     siteTitle: 'Nnaji Victor | Software Engineer',
-    siteDescription: '👋🏽 Nnaji Victor is software engineer based in Lagos. tbd',
+    siteDescription: "Nnaji Victor is software engineer based in Lagos with over 2 years of experience within full-stack development. Nnaji Victor is very familiar with Microsoft .NET framework, SQL and No-SQL databases, Modern Client side frameworks like React, Gatsby, Tailwind",
     siteKeywords: 'Nnaji Victor, nnaji, Nnaji, Victor Nnaji, decagon, nnajivictorr, software engineer, Nigerian Developer, React developer, full-stack developer, fullstack',
     siteUrl: 'http://localhost:8000/',
     siteLanguage: 'en_US',
@@ -50,11 +50,8 @@ module.exports = {
           url: '/#contact',
         },
       ],
-
       navHeight: 100,
-
       colors: {
-        // green: '#64ffda',
         green: '#64ffda',
         navy: '#0a192f',
         darkNavy: '#020c1b',

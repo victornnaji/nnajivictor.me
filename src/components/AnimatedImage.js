@@ -1,9 +1,9 @@
 import React from 'react'
 import Lottie from 'react-lottie';
-import Developer from '../assets/hero.json';
+import Developer from '../assets/dev.json';
 import Scroll from '../assets/scroll.json';
 import styled from 'styled-components';
-import { theme } from '../styles';
+import { theme} from '../styles';
 
 const {fonts} = theme;
 
@@ -20,7 +20,7 @@ export const AnimatedScroll = () => {
 
       return (
         <StyledScroll>
-             <Lottie options={defaultOptions} />
+             <Lottie options={defaultOptions} isClickToPauseDisabled = {true}/>
         </StyledScroll>
       )
     
@@ -50,34 +50,42 @@ const AnimatedImage = () => {
     
     return (
         <StyledAnimation>
-            <Lottie options={defaultOptions} />
+            <Lottie options={defaultOptions} isClickToPauseDisabled = {true}/>
         </StyledAnimation>
     )
 }
 
 const StyledAnimation = styled.div`
+     width: 100%;
+     
     div{
         svg{
             g{
-                g:nth-child(21){
-                    g{
+                
+                g:nth-child(1){
+                    g:nth-child(10){
                         path{
-                            fill: var(--secondary-color);
+                            fill: var(--bg);
                         }
                     }
                 }
+                g:nth-child(10){
+                    g:nth-child(4){
+                        path{
+                            fill: #c68642;
+                        }
+                    }
 
-                g:nth-child(22){
-                    g{
+                    g:nth-child(3){
                         path{
-                            fill: var(--secondary-color);
+                            fill: black;
                         }
                     }
                 }
-                g:nth-child(17){
+                g:nth-child(2){
                     g{
                         path{
-                            fill: var(--secondary-color);
+                            fill: #c68642;
                         }
                     }
                 }

@@ -4,12 +4,14 @@ import { graphql } from 'gatsby';
 import { Main } from '@styles';
 import styled from "styled-components";
 import {Hero} from "@components";
+import About from "../components/sections/About";
 
 const IndexPage = ({location, data}) => {
   return (
     <Layout location={location}>
       <StyledMainContainer>
         <Hero data={data.hero.edges}/>
+        <About data={data.about.edges}/>
       </StyledMainContainer>
     </Layout>
   )
@@ -24,6 +26,25 @@ export const pageQuery = graphql`
             intro
             name
             title
+          }
+          html
+        }
+      }
+    }
+
+    about: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/About/"}}) {
+      edges{
+        node{
+          frontmatter {
+            title
+            skills
+            avatar{
+              childImageSharp{
+                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
           html
         }

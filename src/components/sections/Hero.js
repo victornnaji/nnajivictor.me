@@ -79,6 +79,7 @@ const Hero = ({data}) => {
 }
 
 const StyledFragment = styled.div`
+     
 `;
 
 const StyledScroll = styled(Link)`
@@ -93,6 +94,7 @@ const StyledContainer = styled.div`
     ${mixins.flexBetween};
     align-items: flex-start;
     ${media.tablet`display: block`};
+    min-height: 100vh;
 `;
 
 const StyledContent = styled.div`
@@ -109,7 +111,7 @@ const StyledSVG = styled.div`
     max-width: 100%;
     margin-left: 60px;
     ${media.tablet`margin: 60px auto 0;`};
-    ${media.phablet`width: 100%;`};
+    ${media.phablet`width: 80%;`};
     a {
         &:focus {
         outline: 0;
@@ -128,7 +130,7 @@ const StyledOverline = styled.div`
 `;
 
 const StyledTitle = styled.h2`
-  font-size: 80px;
+  font-size: 75px;
   line-height: 1.1;
   margin: 0;
   ${media.desktop`font-size: 70px;`};
