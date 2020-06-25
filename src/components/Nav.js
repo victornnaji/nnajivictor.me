@@ -121,21 +121,14 @@ class Nav extends Component {
               <TransitionGroup component={null}>
                   {isMounted && (
                     <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                      <div
+                      <div className="nav-theme-toogler"
                         style={{
                           transitionDelay: `${
                             isHome ? navLinks.length * 100 : 0
                           }ms`,
                         }}
-                      >
-                        {/* <StyledResumeButton
-                          href="/resume.pdf"
-                          target="_blank"
-                          rel="nofollow noopener noreferrer"
-                        >
-                          Resume
-                        </StyledResumeButton> */}
-                            <Toogle menuOpen={menuOpen}/>
+                      > 
+                        <Toogle menuOpen={menuOpen}/>
                       </div>
                     </CSSTransition>
                   )}
@@ -172,16 +165,14 @@ class Nav extends Component {
                           >
                             {name === "blog" ? (
                               <Link to={url}>{name}</Link>
-                            ) : (
-                              <StyledListLink to={url}>{name}</StyledListLink>
+                              ) : (
+                                <StyledListLink to={url}>{name}</StyledListLink>
                             )}
                           </StyledListItem>
                         </CSSTransition>
                       ))}
                   </TransitionGroup>
                 </StyledList>
-
-               
               </StyledLink>
             </StyledNav>
 
@@ -222,6 +213,11 @@ const StyledNav = styled.nav`
   font-family: ${fonts.SFMono};
   counter-reset: item 0;
   z-index: 12;
+
+  .nav-theme-toogler{
+    ${media.giant`order: 1`};
+    ${media.tablet`order: 0;`}
+  }
 `;
 const StyledLogo = styled.div`
   ${mixins.flexCenter};
