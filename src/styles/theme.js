@@ -6,6 +6,8 @@ const theme = {
     lightestSlate: '#ccd6f6',
     shadowNavy: 'rgba(2, 12, 27, 0.7)',
     white: '#e6f1ff',
+    lightNavy: '#172a45',
+    navy: '#0a192f',
   },
 
   fonts: {

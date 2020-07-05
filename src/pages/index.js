@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from 'gatsby';
 import { Main } from '@styles';
 import styled from "styled-components";
-import {Hero} from "@components";
+import {Hero, Featured} from "@components";
 import About from "../components/sections/About";
 
 const IndexPage = ({location, data}) => {
@@ -12,6 +12,7 @@ const IndexPage = ({location, data}) => {
       <StyledMainContainer>
         <Hero data={data.hero.edges}/>
         <About data={data.about.edges}/>
+        <Featured data={data.featured.edges} />
       </StyledMainContainer>
     </Layout>
   )
@@ -51,6 +52,27 @@ export const pageQuery = graphql`
                 fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
                   src
+                }
+              }
+            }
+          }
+          html
+        }
+      }
+    }
+
+    featured: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/Featured/"}}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            tech
+            github
+            external
+            avatar{
+              childImageSharp {
+                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "var(--secondary-color)" }) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
