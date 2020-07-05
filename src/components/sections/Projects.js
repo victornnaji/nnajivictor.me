@@ -5,7 +5,7 @@ import sr from "../../utils/sr";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { FormattedIcon } from '@components/icons';
 
-const {srConfig,fontSizes, fonts, colors} = theme;
+const {srConfig,fontSizes, fonts } = theme;
 
 const Projects = ({data}) => {
     const [showMore, setShowMore] = useState(false);
