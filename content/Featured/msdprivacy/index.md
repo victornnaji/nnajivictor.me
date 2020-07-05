@@ -1,6 +1,6 @@
 ---
 title: 'The MSD Privacy'
-github: '#'
+github: ''
 external: 'https://www.msdprivacy.com/'
 tech:
   - Wordpress

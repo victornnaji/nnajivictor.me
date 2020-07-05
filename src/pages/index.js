@@ -5,6 +5,7 @@ import { Main } from '@styles';
 import styled from "styled-components";
 import {Hero, Featured} from "@components";
 import About from "../components/sections/About";
+import Projects from "../components/sections/Projects";
 
 const IndexPage = ({location, data}) => {
   return (
@@ -13,6 +14,7 @@ const IndexPage = ({location, data}) => {
         <Hero data={data.hero.edges}/>
         <About data={data.about.edges}/>
         <Featured data={data.featured.edges} />
+        <Projects data={data.projects.edges}/>
       </StyledMainContainer>
     </Layout>
   )
@@ -76,6 +78,21 @@ export const pageQuery = graphql`
                 }
               }
             }
+          }
+          html
+        }
+      }
+    }
+
+    projects: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/Portfolio/"}}, 
+    sort: {order: DESC, fields: frontmatter___date}) {
+      edges {
+        node {
+          frontmatter {
+            tech
+            github
+            external
+            title
           }
           html
         }

@@ -139,7 +139,7 @@ const StyledImgContainer = styled.a`
   grid-row: 1 / -1;
   position: relative;
   z-index: 1;
-  background-color: ${colors.shadowNavy};
+  /* background-color: ${colors.shadowNavy}; */
   border-radius: ${theme.radius + 1}px;
   transition: ${theme.transition};
   ${media.tablet`height: 100%;`};

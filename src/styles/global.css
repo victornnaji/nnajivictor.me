@@ -18,7 +18,8 @@ body.light{
     --primary-color: #020c1b;
     --heading-color: #0a192f;
     --link-color: #5b3acc;
-    /* --link-color: #0d48a0; */
+    --tertiary-color: #fdfff5;
+    --tertiary-color: #dedede;
     --secondary-color: var(--link-color);
     /* transition: background-color 0.1s ease; */
 }
@@ -28,5 +29,6 @@ body.dark{
     --primary-color: #ccd6f6;
     --heading-color: #e6f1ff;
     --link-color: #64ffda;
+    --tertiary-color: #172a45;
     --secondary-color: var(--link-color);
 }
