@@ -5,6 +5,7 @@ module.exports = {
     siteUrl: 'http://localhost:8000/',
     siteLanguage: 'en_US',
     name: 'Nnaji Victor',
+    siteJob: "Software Engineer",
     Location: "Lagos, Nigeria",
     email: 'Nnajivictor0@gmail.com',
     github: 'https://github.com/Nnaji-Victor',

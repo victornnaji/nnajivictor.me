@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import anime from 'animejs';
 
-const AnimatedHeading = ({children}) => {
+const AnimatedHeading = ({animate,children}) => {
 
     useEffect(()=> {
+        if(animate){
         const loader = anime.timeline;
-
         loader({loop: false})
         .add({
             targets: '.ml9 .letter',
@@ -19,8 +19,9 @@ const AnimatedHeading = ({children}) => {
             duration: 1000,
             easing: "easeOutExpo",
             delay: 1000
-        })
-    },[])
+         })
+        }
+    },[animate])
 
     return (
         <div className='loader'>

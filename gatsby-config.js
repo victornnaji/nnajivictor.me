@@ -7,6 +7,8 @@ module.exports = {
     description: config.siteDescription,
     author: config.twitterHandle,
     siteUrl: config.siteUrl,
+    name: config.name,
+    job: 'Software Engineer'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -32,8 +34,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `NnajiVictor`,
-        short_name: `NV`,
+        name: `VictorNnaji`,
+        short_name: `VN`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

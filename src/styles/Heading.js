@@ -22,8 +22,7 @@ const Heading = styled.h3`
     position: relative;
     top: -5px;
     margin-left: 20px;
-    ${media.desktop`width: 200px`};
-    ${media.tablet`width: 100%;`};
+    ${media.desktop`width: 30%`};
     ${media.thone`margin-left: 10px;`};
   }
 `;

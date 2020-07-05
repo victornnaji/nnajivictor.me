@@ -13,6 +13,7 @@ skills:
  - Git
 
 avatar : './victor.jpg'
+avatar2 : './victor2.jpg'
 ---
 
 I'm a weird guy who enjoys making eccentric things with web technologies. I love to create intrinsic user interface and useful interaction, developing rich web experiences & web applications. 

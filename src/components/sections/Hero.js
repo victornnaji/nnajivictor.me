@@ -4,6 +4,7 @@ import { mixins, media, theme } from '../../styles';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import AnimatedImage, { AnimatedScroll } from '../AnimatedImage';
 import { Link } from 'gatsby';
+import ShowOnDesktop from '../../styles/ShowOnDesktop';
 
 const {fontSizes, fonts, navDelay, loaderDelay } = theme;
 
@@ -33,7 +34,20 @@ const Hero = ({data}) => {
         />
       );
 
-      const items = [one, two, three, four];
+      const five = () => (
+        <div style={{ transitionDelay: '500ms' }}>
+          <ShowOnDesktop>
+          <StyledResumeButton
+              href="/resume.pdf"
+              target="_blank"
+              rel="nofollow noopener noreferrer">
+              Resume
+          </StyledResumeButton>
+        </ShowOnDesktop>
+        </div>
+      );
+
+      const items = [one, two, three, four, five];
 
     return (
         <StyledFragment>
@@ -103,6 +117,10 @@ const StyledContent = styled.div`
     a {
         ${mixins.inlineLink};
     }
+`;
+const StyledResumeButton = styled.a`
+ ${mixins.bigButton};
+  margin-top: 10px;
 `;
 
 const StyledSVG = styled.div`

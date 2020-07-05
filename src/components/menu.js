@@ -24,7 +24,7 @@ const StyledContainer = styled.div`
 const Sidebar = styled.aside`
   ${mixins.flexCenter};
   flex-direction: column;
-  background-color: ${colors.lightNavy};
+  background-color: var(--bg);
   padding: 50px;
   width: 50vw;
   height: 100%;
@@ -102,9 +102,13 @@ const Menu = ({ menuOpen, toggleMenu }) => {
           <NavList>
             {navLinks &&
               navLinks.map(({ url, name }, i) => (
-                <NavListItem key={i}>
+                name === 'toggle' ? (
+                  null
+                ) : (
+                  <NavListItem key={i}>
                   <NavLink to={url}>{name}</NavLink>
                 </NavListItem>
+                )
               ))}
           </NavList>
           <ResumeLink href="/resume.pdf" target="_blank" rel="nofollow noopener noreferrer">

@@ -20,7 +20,7 @@ const SectionHeading = ({text}) => {
     )
 }
 
-const StyledHead = styled.h2`
+const StyledHead = styled.div`
     .letter {
         transform-origin: 50% 100%;
         display: inline-block;
@@ -31,7 +31,6 @@ const StyledHead = styled.h2`
 const MHeading = styled(Heading)`
     &::before {
         content: "${props => props.content}";
-        /* background: red; */
         position: absolute;
         opacity: 0.06;
         font-size: 150px;

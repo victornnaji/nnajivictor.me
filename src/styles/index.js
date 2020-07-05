@@ -7,5 +7,7 @@ export { default as Main } from './Main';
 export { default as Section } from './Section';
 // export { default as Footer } from './Footer';
 export { default as Heading } from './Heading';
+export {default as ShowOnDesktop} from './ShowOnDesktop'
+export {default as ShowOnMobile} from './ShowOnMobile'
 // export { default as Button } from './Button';
 // export { default as InlineLink } from './InlineLink';
