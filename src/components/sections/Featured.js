@@ -153,6 +153,7 @@ const StyledDescription = styled.div`
   border-radius: ${theme.borderRadius};
   ${media.thone`
     background-color: transparent;
+    color: var(--primary-color);
     padding: 20px 0;
     box-shadow: none;
     &:hover {

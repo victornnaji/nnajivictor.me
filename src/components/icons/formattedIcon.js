@@ -28,7 +28,7 @@ const FormattedIcon = ({ name }) => {
       return <IconFolder />;
     case 'Fork':
       return <IconFork />;
-    case 'GitHub':
+    case 'GitHub' || 'github':
       return <IconGitHub />;
     case 'Instagram':
       return <IconInstagram />;

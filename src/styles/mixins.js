@@ -108,6 +108,8 @@ const mixins = {
     &:focus,
     &:active {
       background-color: var(--link-color);
+      /* background: red; */
+      color: var(--bg) !important;
     }
     &:after {
       display: none !important;

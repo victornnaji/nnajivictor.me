@@ -21,7 +21,8 @@ body.light{
     --tertiary-color: #fdfff5;
     --tertiary-color: #dedede;
     --secondary-color: var(--link-color);
-    /* transition: background-color 0.1s ease; */
+    --primary-opacity: #020c1b1a;
+
 }
 
 body.dark{
@@ -31,4 +32,5 @@ body.dark{
     --link-color: #64ffda;
     --tertiary-color: #172a45;
     --secondary-color: var(--link-color);
+    --primary-opacity: #ccd6f61a
 }

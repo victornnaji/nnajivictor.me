@@ -47,7 +47,7 @@ const About = ({data}) => {
                <StyledPic>
 
                   <ShowOnDesktop>
-                    <Avatar photo={avatar.childImageSharp.fluid.src} href={github}/>
+                    <Avatar photo={avatar.childImageSharp.fluid.src} href={github} width="100%"/>
                   </ShowOnDesktop>
 
                   <ShowOnMobile>

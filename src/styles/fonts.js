@@ -44,7 +44,17 @@ import SFMonoSemiboldItalicTTF from '@fonts/SFMono/SFMono-SemiboldItalic.ttf';
 import SFMonoSemiboldItalicWOFF from '@fonts/SFMono/SFMono-SemiboldItalic.woff';
 import SFMonoSemiboldItalicWOFF2 from '@fonts/SFMono/SFMono-SemiboldItalic.woff2';
 
+import RoslindaleWoff from '@fonts/Roslindale/RoslindaleWoff.woff';
+import RoslindaleWoff2 from '@fonts/Roslindale/RoslindaleWoff2.woff2';
+
 const FontFaces = css`
+  @font-face {
+    font-family: 'Roslindale Display Condensed';
+    src: url(${RoslindaleWoff}) format('woff'),
+    url(${RoslindaleWoff2}) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
   @font-face {
     font-family: 'Calibre';
     src: url(${CalibreLightWOFF2}) format('woff2'), url(${CalibreLightWOFF}) format('woff'),

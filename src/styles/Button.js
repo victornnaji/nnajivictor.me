@@ -18,8 +18,9 @@ const Button = styled.button`
   &:hover,
   &:focus,
   &:active {
-    /* background-color: ${colors.transGreen}; */
+    /* background-color: var(--bg); */
     outline: none;
+    color: var(--bg);
   }
   &:after {
     display: none !important;
