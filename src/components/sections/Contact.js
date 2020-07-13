@@ -108,8 +108,11 @@ const Contact = ({data}) => {
                         })
                     }
                 </StyledSocial>
-                <div className="newsletter-container">
-                    newsletter
+                <div className="buy-me-cofee">
+                    <a className="bmc-button" target="_blank" rel="nofollow noopener noreferrer" href="https://www.buymeacoffee.com/nnajivictor">
+                        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"/>
+                        <span style={{marginLeft: '5px', fontSize: '19px !important'}}>Buy me a coffee</span>
+                    </a>
                 </div>
             </div>
         </StyledContainer>
@@ -117,7 +120,7 @@ const Contact = ({data}) => {
 }
 
 const StyledContainer = styled(Section)`
-    padding: 200px 0;
+    padding: 200px 0 0 0;
     font-family: ${fonts.Roslindale};
     font-weight: 400;
     display: flex;
@@ -178,7 +181,9 @@ const StyledContainer = styled(Section)`
 
     .contact-email-section{
         width: 50%;
+        ${media.desktop`width: 35%`}
         font-size: 30px;
+        ${media.tablet` font-size: 24px`};
         text-align: center;
         color: var(--heading-color);
         ${media.tablet`width: 100%; margin-top: 60px`}
@@ -187,6 +192,42 @@ const StyledContainer = styled(Section)`
         align-items: center;
         justify-content: space-between;
         height: 100%;
+
+        .buy-me-cofee{
+            .bmc-button img{
+                height: 34px !important;
+                width: 35px !important;
+                margin-bottom: 1px !important;
+                box-shadow: none !important;
+                border: none !important;
+                vertical-align: middle !important;
+            }
+            .bmc-button{
+                padding: 7px 15px 7px 10px !important;
+                line-height: 35px !important;
+                height:51px !important;
+                text-decoration: none !important;
+                display:inline-flex !important;
+                color: var(--primary-color) !important;
+                background-color: var(--tertiary-color) !important;
+                border-radius: 5px !important;
+                border: 1px solid transparent !important;
+                padding: 7px 15px 7px 10px !important;
+                font-size: 20px !important;
+                letter-spacing:0.6px !important;
+                margin: 0 auto !important;
+                font-family:'Arial', cursive !important;
+                -webkit-box-sizing: border-box !important;
+                box-sizing: border-box !important;
+            }
+            .bmc-button:hover, .bmc-button:active, .bmc-button:focus {
+                -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+                text-decoration: none !important;
+                box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+                opacity: 0.85 !important;
+                color: var(--primary-color) !important;
+            }
+        }
     }
 `;
 
