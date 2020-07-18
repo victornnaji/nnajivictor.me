@@ -35,7 +35,7 @@ const BlogPage = ({location, data}) => {
                   <StyledPost key={i} tabIndex="0">
                     <StyledPostInner>
                       <header>
-                        <Link to={`blog/${node.slug}`}>
+                        <Link to={`/blog/${node.slug}/`}>
                           <StyledPostHeader>
                               <StyledFolder>
                                 <IconZap />

@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import theme from './theme';
-const { colors, fontSizes, fonts } = theme;
+const { fontSizes, fonts } = theme;
 
 const prismColors = {
   bg: `#112340`,

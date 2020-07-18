@@ -3,12 +3,13 @@ import { graphql, Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import kebabCase from 'lodash.kebabcase';
 import styled from 'styled-components';
-import { Main, theme } from '@styles';
+import { Main, media } from '@styles';
 import Layout from '../components/layout';
+import NewsLetter from '../components/NewsLetter';
 
-const PostTemplate = ({ data, location }) => {
-    // const { frontmatter, html } = data.markdownRemark;
-    // const { title, date, tags } = frontmatter;
+const PostTemplate = ({ data, location, pageContext }) => {
+   const {next, prev} = pageContext;
+   console.log(next);
     const post = data.post;
     const html = post.html.childMarkdownRemark.html;
 
@@ -22,7 +23,7 @@ const PostTemplate = ({ data, location }) => {
             <StyledPostContainer>
                 <span className="breadcrumb">
                     <span className="arrow">&larr;</span>
-                    <Link to="/blog">All Posts</Link>
+                    <Link to="/blog/">All Posts</Link>
                 </span>
 
                 <StyledPostHeader>
@@ -45,8 +46,33 @@ const PostTemplate = ({ data, location }) => {
                         ))}
                     </p>
                 </StyledPostHeader>
-
                 <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
+                 <NewsLetter />
+
+                 <NextPostAndPrev>
+                     <div className="prev">
+                        {prev && 
+                            <span className="breadcrumb">
+                                <span className="arrow">&larr;</span>
+                                <Link to={`/blog/${prev.slug}/`}>
+                                    {prev.title}
+                                </Link>
+                            </span>
+                            }
+                            &nbsp;
+                     </div>
+                     <div className="next">
+                         {next && 
+                         <span className="breadcrumb">
+                            <Link to={`/blog/${next.slug}/`}>
+                                {next.title}
+                            </Link>
+                            <span className="arrow">&rarr;</span>
+                         </span>
+                         }
+                         &nbsp;
+                     </div>
+                 </NextPostAndPrev>
             </StyledPostContainer>
         </Layout>
     )
@@ -78,6 +104,30 @@ const StyledPostContent = styled.div`
     color: var(--primary-color);
   }
 `;
+
+const NextPostAndPrev = styled.div`
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary-color);
+
+    ${media.tablet` margin-top: 40px; flex-direction: column;`}
+
+    .next{
+        width: 45%;
+        ${media.tablet` width: 100%; margin-bottom: 10px;`}
+        .arrow{
+            margin-left: 10px;
+        }
+    }
+
+    .prev{
+        width: 45%;
+        ${media.tablet` width: 100%;`}
+    }
+`;
+
 
 export const query = graphql`
   query getPost($slug: String!) {

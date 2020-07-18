@@ -13,6 +13,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             slug
+            title
+            description
           }
         }
       }
@@ -32,12 +34,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     // Create post detail pages
     const posts = result.data.postsRemark.edges;
-    posts.forEach(({ node }) => {
+    posts.forEach(({ node }, index) => {
       createPage({
         path: `blog/${node.slug}`,
         component: postTemplate,
         context: {
           slug: node.slug,
+          prev: index === 0 ? null : posts[index - 1].node,
+          next: index === (posts.length - 1) ? null : posts[index + 1].node,
         },
       });
     });

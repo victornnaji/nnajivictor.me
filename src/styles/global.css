@@ -32,6 +32,7 @@ body.light{
     --prism-keyword: #477df2;
     --prism-tag: #7a3e9d;
     --prism-string: #a31515;
+    --btn-hover-color: #5b3acc33;
     
 }
 
@@ -53,4 +54,5 @@ body.dark{
     --prism-keyword: #c3a6ff;
     --prism-tag: #2de0a7;
     --prism-string: #bae67e;
+    --btn-hover-color: #64ffda33;
 }
