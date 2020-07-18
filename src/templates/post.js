@@ -51,7 +51,7 @@ const PostTemplate = ({ data, location, pageContext }) => {
                  <NextPostAndPrev>
                      <div className="prev">
                         {prev && 
-                            <span className="breadcrumb">
+                            <span className="breadcrumb breadcrumb-2">
                                 <span className="arrow">&larr;</span>
                                 <Link to={`/blog/${prev.slug}/`}>
                                     {prev.title}
@@ -62,7 +62,7 @@ const PostTemplate = ({ data, location, pageContext }) => {
                      </div>
                      <div className="next">
                          {next && 
-                         <span className="breadcrumb">
+                         <span className="breadcrumb breadcrumb-2">
                             <Link to={`/blog/${next.slug}/`}>
                                 {next.title}
                             </Link>
@@ -123,7 +123,11 @@ const NextPostAndPrev = styled.div`
 
     .prev{
         width: 45%;
-        ${media.tablet` width: 100%;`}
+        ${media.tablet` width: 100%; `}
+    }
+
+    .breadcrumb-2{
+        margin-bottom: 10px;
     }
 `;
 

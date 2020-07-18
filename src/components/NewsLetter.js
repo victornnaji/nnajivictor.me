@@ -48,9 +48,9 @@ const NewsLetter = () => {
                     </button>
 
                     {/* Non Human Bait */}
-                    <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true">
+                    {/* <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true">
                         <input type="text" name="b_f3590c43eb3e748b56b8dab8c_03386aaa36" tabIndex="-1" value=""/>
-                    </div>
+                    </div> */}
                     {/* Non Human Bait */}
                     
                 </div>
