@@ -1,6 +1,10 @@
 const config = require('./src/config');
 const path = require('path');
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
@@ -26,6 +30,14 @@ module.exports = {
         path: `${__dirname}/content/`,
       },
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-dark-mode',
@@ -35,7 +47,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `VictorNnaji`,
-        short_name: `VN`,
+        short_name: `VictorNnaji`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -155,6 +167,7 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
   ],
 }

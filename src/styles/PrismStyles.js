@@ -23,8 +23,8 @@ const PrismStyles = css`
   * and overflow that we removed from <pre>.
   */
   .gatsby-highlight {
-    background-color: ${prismColors.bg};
-    color: ${prismColors.variable};
+    background-color: var(--prism-bg);
+    color: var(--primary-color);
     border-radius: ${theme.borderRadius};
     margin: 2em 0;
     padding: 1.25em;
@@ -69,8 +69,8 @@ const PrismStyles = css`
     padding: 1em 1.5em;
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.smish};
-    background-color: ${prismColors.bg};
-    color: ${prismColors.grey};
+    background-color: var(--prism-bg);
+    color: var(--prism-grey);
     border-top-left-radius: ${theme.borderRadius};
     border-top-right-radius: ${theme.borderRadius};
     border-bottom: 1px solid ${prismColors.lineHighlight};
@@ -85,7 +85,7 @@ const PrismStyles = css`
   /* Line highlighting */
   .gatsby-highlight-code-line {
     display: block;
-    background-color: ${prismColors.lineHighlight};
+    background-color: var(--prism-highlighted);
     border-left: 2px solid var(--link-color);
     padding-left: calc(1em + 2px);
     padding-right: 1em;
@@ -95,8 +95,8 @@ const PrismStyles = css`
 
   /* Language badges */
   .gatsby-highlight pre[class*='language-']::before {
-    background: ${colors.lightestNavy};
-    color: ${colors.white};
+    background: var(--prism-badge);
+    color: var(--primary-color);
     font-size: ${fontSizes.xs};
     font-family: ${fonts.SFMono};
     line-height: 1.5;
@@ -160,6 +160,9 @@ const PrismStyles = css`
   .gatsby-highlight pre[class='language-csharp']::before {
     content: 'c#';
   }
+  .gatsby-highlight pre[class='language-php']::before {
+    content: 'php';
+  }
 
   /* Prism Styles */
   .token {
@@ -173,7 +176,7 @@ const PrismStyles = css`
     color: ${prismColors.comment};
   }
   .token.punctuation {
-    color: ${prismColors.grey};
+    color: var(--prism-punctuation);
   }
   .token.namespace,
   .token.deleted {
@@ -184,18 +187,18 @@ const PrismStyles = css`
   .token.class-name,
   .token.constant,
   .token.symbol {
-    color: ${prismColors.yellow};
+    color: var(--prism-function);
   }
   .token.attr-name,
   .token.operator,
   .token.rule {
-    color: ${prismColors.orange};
+    color: var(--prism-operator);
   }
   .token.keyword,
   .token.boolean,
   .token.number,
   .token.property {
-    color: ${prismColors.purple};
+    color: var(--prism-keyword);
   }
   .token.tag,
   .token.selector,
@@ -204,7 +207,7 @@ const PrismStyles = css`
   .token.builtin,
   .token.entity,
   .token.url {
-    color: ${prismColors.blue};
+    color: var(--prism-tag);
   }
   .token.string,
   .token.char,
@@ -212,7 +215,7 @@ const PrismStyles = css`
   .token.regex,
   .token.variable,
   .token.inserted {
-    color: ${prismColors.green};
+    color: var(--prism-string);
   }
   .token.important,
   .token.bold {

@@ -22,7 +22,17 @@ body.light{
     --tertiary-color: #dedede;
     --secondary-color: var(--link-color);
     --primary-opacity: #020c1b1a;
-
+    --prism-bg: #020c1b1a;
+    --prism-grey: #393A34;
+    --prism-highlighted: #ffffff80;
+    --prism-badge: #babbbd;
+    --prism-punctuation: #393A34;
+    --prism-function: #9a050f;
+    --prism-operator: #a67c23;
+    --prism-keyword: #477df2;
+    --prism-tag: #7a3e9d;
+    --prism-string: #a31515;
+    
 }
 
 body.dark{
@@ -32,5 +42,15 @@ body.dark{
     --link-color: #64ffda;
     --tertiary-color: #172a45;
     --secondary-color: var(--link-color);
-    --primary-opacity: #ccd6f61a
+    --primary-opacity: #ccd6f61a;
+    --prism-bg: #112340;
+    --prism-grey: #a2aabc;
+    --prism-punctuation: #a2aabc;
+    --prism-highlighted: #1d2d50;
+    --prism-badge: #303C55;
+    --prism-function: #ffd580;
+    --prism-operator: #ffae57;
+    --prism-keyword: #c3a6ff;
+    --prism-tag: #2de0a7;
+    --prism-string: #bae67e;
 }
