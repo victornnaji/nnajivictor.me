@@ -9,7 +9,6 @@ import NewsLetter from '../components/NewsLetter';
 
 const PostTemplate = ({ data, location, pageContext }) => {
    const {next, prev} = pageContext;
-   console.log(next);
     const post = data.post;
     const html = post.html.childMarkdownRemark.html;
 
