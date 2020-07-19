@@ -128,7 +128,6 @@ const StyledGrid = styled.div`
 `;
 
 const StyledProjectInner = styled.div`
-  ${mixins.boxShadow};
   ${mixins.flexBetween};
   flex-direction: column;
   align-items: flex-start;

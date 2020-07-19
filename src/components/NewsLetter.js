@@ -11,20 +11,26 @@ const NewsLetter = () => {
 
     const handleSubmit = async event =>{
         event.preventDefault();
-        setDisabled(true)
-        setMessage("Sending...")
-        const response = await addToMailchimp(email)
-        if (response.result === "error") {
-            if (response.msg.toLowerCase().includes("already subscribed")) {
-              setMessage("You're already on to the list!");
-              setEmail("");
-            } else {
-              setMessage("Some error occured while subscribing you to the list.")
-            }
+        setDisabled(true);
+
+        if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)){
+            setMessage("Please Enter a Valid Email Address");
             setDisabled(false)
-          } else {
-            setMessage("Thanks! Please check your e-mail and click the confirmation link.")
-            setEmail("");
+        }else{
+            setMessage("Sending...")
+            const response = await addToMailchimp(email)
+            if (response.result === "error") {
+                if (response.msg.toLowerCase().includes("already subscribed")) {
+                    setMessage("You're already on the list!");
+                    setEmail("");
+                } else {
+                    setMessage("Some error occured while subscribing you to the list.")
+                }
+                setDisabled(false)
+                } else {
+                setMessage("Thanks! Please check your e-mail and click the confirmation link.")
+                setEmail("");
+            }
         }
     };
 
@@ -55,7 +61,7 @@ const NewsLetter = () => {
                     
                 </div>
             </form>
-            <div>{message}</div>
+            <div className="message-box">{message}</div>
         </NewsLetterContent>
     )
 };
@@ -125,6 +131,11 @@ const NewsLetterContent = styled.div`
         `}
        }
     }
+   }
+
+   .message-box{
+    margin-top: 10px;
+    font-size: 16px;
    }
 
 

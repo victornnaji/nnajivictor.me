@@ -15,14 +15,17 @@ body {
 
 body.light{
     --bg: #ffffff;
+    --bg: #f7f7f7;
     --primary-color: #020c1b;
     --heading-color: #0a192f;
     --link-color: #5b3acc;
-    --tertiary-color: #fdfff5;
     --tertiary-color: #dedede;
+    --tertiary-color: #f3f4f5;
+    --tertiary-color: #e6e6e6;
     --secondary-color: var(--link-color);
     --primary-opacity: #020c1b1a;
     --prism-bg: #020c1b1a;
+    --prism-bg: #e6e6e6;
     --prism-grey: #393A34;
     --prism-highlighted: #ffffff80;
     --prism-badge: #babbbd;

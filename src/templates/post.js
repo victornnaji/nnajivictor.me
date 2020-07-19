@@ -115,7 +115,7 @@ const NextPostAndPrev = styled.div`
 
     .next{
         width: 45%;
-        ${media.tablet` width: 100%; margin-bottom: 10px;`}
+        ${media.tablet` width: 100%; margin-bottom: 10px; display: flex; justify-content: flex-end`}
         .arrow{
             margin-left: 10px;
         }

@@ -120,7 +120,6 @@ const StyledDate = styled.span`
 `;
 
 const StyledPostInner = styled.div`
-  ${mixins.boxShadow};
   ${mixins.flexBetween};
   flex-direction: column;
   align-items: flex-start;
@@ -129,7 +128,7 @@ const StyledPostInner = styled.div`
   height: 100%;
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
-  background-color: var(--primary-opacity);
+  background-color: var(--tertiary-color);
   header,
   a {
     width: 100%;
