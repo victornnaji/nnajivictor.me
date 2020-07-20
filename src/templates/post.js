@@ -108,13 +108,16 @@ const NextPostAndPrev = styled.div`
     margin-top: 100px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     color: var(--secondary-color);
 
     ${media.tablet` margin-top: 40px; flex-direction: column;`}
 
     .next{
         width: 45%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
         ${media.tablet` width: 100%; margin-bottom: 10px; display: flex; justify-content: flex-end`}
         .arrow{
             margin-left: 10px;

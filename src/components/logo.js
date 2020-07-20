@@ -9,7 +9,7 @@ const Logo = () => {
         anime
           .timeline({ loop: false })
           .add({
-            targets: ".ml15 .word",
+            targets: ".ml157 .word",
             scale: [14, 1],
             opacity: [0, 1],
             easing: "easeInOutExpo",

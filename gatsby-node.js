@@ -6,6 +6,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
   const tagTemplate = path.resolve('src/templates/tag.js');
+  const blogsTemplate = path.resolve('src/templates/blog.js');
 
   const result = await graphql(`
     {
@@ -58,6 +59,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  //amount of posts
+  // const allPosts = posts;
+  //posts per page 
+  const postsPerPage = 6
+  //how many pages
+  const numPages = Math.ceil(posts.length/postsPerPage);
+
+  Array.from({length: numPages}).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog`: `/blog/${i+1}`,
+      component: blogsTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+        length: posts.length,
+      },
+    })
+  })
 }
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     // https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules

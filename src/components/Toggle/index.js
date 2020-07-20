@@ -91,7 +91,9 @@ const Toggler = styled.div`
   width: 15px;
   opacity: 1;
   transform: translate(6px, -4px) rotate(15deg);
-  ${media.thone`transform: translate(6px, -1px) rotate(15deg);`}
+  ${media.tablet`transform: translate(6px, -5px) rotate(15deg);`}
+  ${media.phablet`transform: translate(6px, -3px) rotate(15deg);`}
+  ${media.phone`transform: translate(6px, -1px) rotate(15deg);`}
   transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
 }
 
@@ -120,7 +122,9 @@ const Toggler = styled.div`
 .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
   opacity: 1;
   transform: translate(27px,-5px) rotate(-15deg);
-  ${media.tablet`transform: translate(27px,-2px) rotate(-15deg);`};
+  ${media.tablet`transform: translate(27px,-5px) rotate(-15deg);`};
+  ${media.phablet`transform: translate(27px,-3px) rotate(-15deg);`};
+  ${media.phone`transform: translate(27px,-2px) rotate(-15deg);`};
 }
 
 `;
