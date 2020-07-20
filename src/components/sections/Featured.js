@@ -93,7 +93,7 @@ const Featured = ({data}) => {
                             href={external ? external : github ? github : '#'}
                             target="_blank"
                             rel="nofollow noopener noreferrer">
-                            <StyledFeaturedImg fluid={avatar.childImageSharp.fluid} alt={title} />
+                            <StyledFeaturedImg fluid={avatar.childImageSharp.fluid} alt={title} width="100%"/>
                         </StyledImgContainer>
                     </StyledProject>
                   )

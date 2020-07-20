@@ -28,7 +28,7 @@ const NewsLetter = () => {
                 }
                 setDisabled(false)
                 } else {
-                setMessage("Thanks! Please check your e-mail and click the confirmation link.")
+                setMessage("Thanks and welcome! You have successfully joined the Newsletter 🥳.")
                 setEmail("");
             }
         }
