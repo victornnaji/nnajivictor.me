@@ -36,9 +36,12 @@ class Nav extends Component {
       }
     
       componentWillUnmount() {
-        window.removeEventListener('scroll', () => this.handleScroll());
-        window.removeEventListener('resize', () => this.handleResize());
-        window.removeEventListener('keydown', e => this.handleKeydown(e));
+        // window.removeEventListener('scroll', () => this.handleScroll());
+        // window.removeEventListener('resize', () => this.handleResize());
+        // window.removeEventListener('keydown', e => this.handleKeydown(e));
+            this.setState = (state,callback)=>{
+              return;
+          };
       }
 
 
