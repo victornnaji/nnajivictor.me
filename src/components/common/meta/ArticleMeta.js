@@ -8,8 +8,6 @@ import logo from "@images/vn.png";
 import ImageMeta from "./ImageMeta";
 
 const ArticleMeta = ({data}) => {
-    console.log(data);
-
     const post = data.post;
     const shareImage = post.featuredImage?.fluid.src ? post.featuredImage.fluid.src :ogImage;
     const tags = _.map(post.tags);

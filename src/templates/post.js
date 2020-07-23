@@ -16,11 +16,6 @@ const PostTemplate = ({ data, location, pageContext }) => {
     return (
         <Layout location={location}>
            <ArticleMeta data={data}/>
-            {/* <Helmet>
-                <title>{post.title} | Nnaji Victor</title>
-                <link rel="canonical" href="https://nnajivictor.me/blog" />
-            </Helmet> */}
-
             <StyledPostContainer>
                 <span className="breadcrumb">
                     <span className="arrow">&larr;</span>

@@ -200,7 +200,7 @@ const StyledContainer = styled.header`
   /* box-shadow: ${props =>
     props.scrollDirection === 'up' ? `0 10px 30px -10px ${colors.shadowNavy}` : 'none'}; */
   transform: translateY(
-    ${props => (props.scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px')}
+    ${props => (props.scrollDirection === 'down' ? '-150px' : '0px')}
   );
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 15px;`};

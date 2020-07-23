@@ -52,17 +52,14 @@ const Layout = ({ children, location }) => {
 
   return (
     <div id="root">
-       {/* <Head metadata={site.siteMetadata} /> */}
-
       <GlobalStyle />
-
       <SkipToContent href="#content">Skip to Content</SkipToContent>
       
       {isLoading && isHome ? (
         <Loading finishLoading={() => setIsLoading(false)}/>
       ) : (
          <StyledContent>
-          <Banner />
+           <Banner isHome={isHome} show={show}/>
            <Nav isHome={isHome} show={show}/>
           <Social isHome={isHome} />
 
