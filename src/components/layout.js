@@ -5,7 +5,6 @@ import Footer from './Footer';
 import styled from 'styled-components';
 import { GlobalStyle, theme } from "@styles";
 import Loading from "./Loading";
-import Head from "./head";
 import Nav from "./Nav";
 import Social from "./Social";
 import {Banner} from '@components';
@@ -37,15 +36,8 @@ const Layout = ({ children, location }) => {
     }
   }, [isLoading, location.hash]);
 
-  const {site, display} = useStaticQuery(graphql`
+  const {display} = useStaticQuery(graphql`
   query LayoutQuery{
-    site{
-      siteMetadata{
-        title,
-        description,
-        siteUrl
-      }
-    }
   display:allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/Banner/"}}) {
     nodes {
       frontmatter {
@@ -60,7 +52,7 @@ const Layout = ({ children, location }) => {
 
   return (
     <div id="root">
-       <Head metadata={site.siteMetadata} />
+       {/* <Head metadata={site.siteMetadata} /> */}
 
       <GlobalStyle />
 

@@ -1,15 +1,21 @@
 import React from "react"
 import Layout from "../components/layout"
-import { graphql } from 'gatsby';
+import { graphql  } from 'gatsby';
 import { Main } from '@styles';
 import styled from "styled-components";
 import {Hero, Featured} from "@components";
 import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
 import Contact from "../components/sections/Contact";
+import WebsiteMeta from "../components/common/meta/WebsiteMeta";
+import Head from "../components/head";
 
 const IndexPage = ({location, data}) => {
+
   return (
+    <>
+    <WebsiteMeta/>
+    <Head metadata={data.websiteData}/>
     <Layout location={location}>
       <StyledMainContainer>
         <Hero data={data.hero.edges}/>
@@ -19,6 +25,7 @@ const IndexPage = ({location, data}) => {
         <Contact data={data.contact.edges}/>
       </StyledMainContainer>
     </Layout>
+    </>
   )
 }
 
@@ -111,6 +118,16 @@ export const pageQuery = graphql`
             codepen
           }
         }
+      }
+    }
+
+    websiteData: site {
+      siteMetadata {
+        author
+        description
+        name
+        siteUrl
+        title
       }
     }
 

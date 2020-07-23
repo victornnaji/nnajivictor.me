@@ -1,11 +1,12 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby';
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 import kebabCase from 'lodash.kebabcase';
 import styled from 'styled-components';
 import { Main, media } from '@styles';
 import Layout from '../components/layout';
 import NewsLetter from '../components/NewsLetter';
+import ArticleMeta from '../components/common/meta/ArticleMeta';
 
 const PostTemplate = ({ data, location, pageContext }) => {
    const {next, prev} = pageContext;
@@ -14,10 +15,11 @@ const PostTemplate = ({ data, location, pageContext }) => {
 
     return (
         <Layout location={location}>
-            <Helmet>
+           <ArticleMeta data={data}/>
+            {/* <Helmet>
                 <title>{post.title} | Nnaji Victor</title>
                 <link rel="canonical" href="https://nnajivictor.me/blog" />
-            </Helmet>
+            </Helmet> */}
 
             <StyledPostContainer>
                 <span className="breadcrumb">
@@ -136,20 +138,25 @@ const NextPostAndPrev = styled.div`
 
 
 export const query = graphql`
-  query getPost($slug: String!) {
-    post: contentfulBlogPosts(slug: {eq: $slug}) {
-      title
-      description
-      date
-      slug
-      tags
-      html: childContentfulBlogPostsSimpleTextTextNode {
-        childMarkdownRemark {
-          html
-        }
+query getPost($slug: String!) {
+  post: contentfulBlogPosts(slug: {eq: $slug}) {
+    title
+    description
+    date
+    slug
+    tags
+    featuredImage {
+      fluid {
+        src
+      }
+    }
+    html: childContentfulBlogPostsSimpleTextTextNode {
+      childMarkdownRemark {
+        html
       }
     }
   }
+}
 `;
 
 export default PostTemplate;

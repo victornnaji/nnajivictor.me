@@ -36,9 +36,6 @@ class Nav extends Component {
       }
     
       componentWillUnmount() {
-        // window.removeEventListener('scroll', () => this.handleScroll());
-        // window.removeEventListener('resize', () => this.handleResize());
-        // window.removeEventListener('keydown', e => this.handleKeydown(e));
             this.setState = (state,callback)=>{
               return;
           };
@@ -224,15 +221,15 @@ const StyledNav = styled.nav`
 `;
 const StyledLogo = styled.div`
   ${mixins.flexCenter};
-  /* a {
+  a {
     display: block;
-    color: ${colors.green};
+    color: var(--secondary-color) !important;
     width: 42px;
     height: 42px;
     &:hover,
     &:focus {
       svg {
-        fill: ${colors.transGreen};
+        fill: var(--secondary-color) !important;
       }
     }
     svg {
@@ -240,7 +237,7 @@ const StyledLogo = styled.div`
       transition: ${theme.transition};
       user-select: none;
     }
-  }  */
+  } 
 `;
 const StyledHamburger = styled.div`
   ${mixins.flexCenter};
