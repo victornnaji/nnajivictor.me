@@ -6,6 +6,7 @@ const WebsiteMeta = () => {
 
     return (
         <Helmet>
+          <html lang="en" prefix="og: http://ogp.me/ns#" />
           <link rel="shortcut icon" href={favicon} />
         </Helmet>
     )

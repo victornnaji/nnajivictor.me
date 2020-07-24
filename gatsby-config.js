@@ -49,6 +49,7 @@ module.exports = {
     'gatsby-plugin-dark-mode',
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-playground`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -59,6 +60,55 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/vn.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options:{
+        query:`
+        {
+          Posts: allContentfulBlogPosts {
+            edges {
+              node {
+                slug
+                date
+                featuredImage {
+                  fixed {
+                    src
+                  }
+                }
+                id
+              }
+            }
+          }
+
+          Tags: allContentfulBlogPosts {
+            edges {
+              node {
+                slug
+                tags
+              }
+            }
+          }
+
+        }
+        `,
+        mapping: {
+          Post: {
+            sitemap: `posts`,
+          },
+          Tag: {
+            sitemap: `tags`,
+          }
+        },
+        exclude: [
+          `/dev-404-page`,
+          `/404`,
+          `/404.html`,
+          `/offline-plugin-app-shell-fallback`,
+        ],
+        createLinkInHead: true,
+        addUncaughtPages: true,
       },
     },
     {

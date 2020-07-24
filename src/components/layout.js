@@ -8,6 +8,7 @@ import Loading from "./Loading";
 import Nav from "./Nav";
 import Social from "./Social";
 import {Banner} from '@components';
+import WebsiteMeta from "./common/meta/WebsiteMeta";
 const { fontSizes, fonts } = theme;
 
 if (typeof window !== 'undefined') {
@@ -52,6 +53,7 @@ const Layout = ({ children, location }) => {
 
   return (
     <div id="root">
+      <WebsiteMeta />
       <GlobalStyle />
       <SkipToContent href="#content">Skip to Content</SkipToContent>
       

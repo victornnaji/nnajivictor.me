@@ -173,7 +173,7 @@ const PrismStyles = css`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: ${prismColors.comment};
+    color: var(--primary-color);
   }
   .token.punctuation {
     color: var(--prism-punctuation);

@@ -56,9 +56,7 @@ class Banner extends Component {
   };
 
   render() {
-    const { isMounted, menuOpen, scrollDirection} = this.state
-    const { isHome } = this.props;
-
+    const {scrollDirection} = this.state
     return (
       <StaticQuery
         query={graphql`
@@ -74,7 +72,7 @@ class Banner extends Component {
           }
         `}
         render={data => 
-          <StyledBanner scrollDirection={scrollDirection} show={this.props.show} dangerouslySetInnerHTML={{ __html: data.allMarkdownRemark.nodes[0].html }} show={data.allMarkdownRemark.nodes[0].frontmatter.show}/>
+          <StyledBanner scrollDirection={scrollDirection} dangerouslySetInnerHTML={{ __html: data.allMarkdownRemark.nodes[0].html }} show={data.allMarkdownRemark.nodes[0].frontmatter.show}/>
         }>
   </StaticQuery>
     )

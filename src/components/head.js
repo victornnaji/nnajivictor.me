@@ -18,8 +18,10 @@ import favicon96x96 from '@images/favicons/favicon-96x96.png';
 import favicon16x16 from '@images/favicons/favicon-16x16.png';
 import msIcon144x144 from '@images/favicons/ms-icon-144x144.png';
 
-const Head = ({ metadata }) => (
-  <Helmet>
+const Head = ({ metadata }) => {
+  metadata = metadata.siteMetadata;
+  return (
+    <Helmet>
     <html lang="en" prefix="og: http://ogp.me/ns#" />
     <title itemProp="name" lang="en">
       {metadata.title}
@@ -66,6 +68,7 @@ const Head = ({ metadata }) => (
     <meta name="msapplication-TileImage" content={msIcon144x144} />
     <meta name="theme-color" content={config.colors.navy} />
   </Helmet>
-)
+  )
+}
 
 export default Head

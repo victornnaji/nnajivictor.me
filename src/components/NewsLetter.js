@@ -43,12 +43,14 @@ const NewsLetter = () => {
 
             <form className="form" onSubmit={handleSubmit}>
                 <div className="form-contents">
-                    <input x-model="email" type="email" 
+                    <input x-model="email" type="email" id="email"
                         required 
                         placeholder="Enter your email" 
                         className="emailInput"
                         onChange={event => setEmail(event.target.value)}
+                        aria-label="Join"
                      />
+                     
                     <button className="button" disabled={disabled}>
                         Join Now
                     </button>
