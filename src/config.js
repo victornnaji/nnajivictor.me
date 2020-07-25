@@ -10,6 +10,8 @@ module.exports = {
     email: 'Nnajivictor0@gmail.com',
     github: 'https://github.com/Nnaji-Victor',
     twitterHandle: '@nnajivictorr',
+    googleAnalyticsID: 'UA-173571213-1',
+    googleVerification: 'tEZuPANu4WaXwfRzfdS45YsgLY7sMvxH-m1zsKa7l8M',
     socialMedia: [
         {
           name: 'GitHub',
