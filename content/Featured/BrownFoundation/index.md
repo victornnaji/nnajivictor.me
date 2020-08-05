@@ -1,7 +1,7 @@
 ---
 title: 'The Brown Foundation'
 github: '#'
-external: '#'
+external: 'https://brownfoundation.org'
 tech:
   - Wordpress
   - VS Code

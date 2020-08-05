@@ -126,8 +126,8 @@ const StyledContainer = styled(Section)`
     display: flex;
     justify-content: space-between;
     color: var(--primary-color);
+    font-size: 135px;
 
-    ${media.giant`font-size: 135px;`}
     ${media.desktop`font-size: 115px;`}
     ${media.tablet`font-size: 100px; width: 100%; display: block`}
     ${media.phablet`font-size: 85px; padding: 0 0;`}
@@ -148,7 +148,6 @@ const StyledContainer = styled(Section)`
         `}
         ${media.thone`line-height: 65px;`}
         ${media.phone` line-height: 60px;`}
-
         .contact-word:nth-child(2), .contact-word:nth-child(4){
             letter-spacing: -4.32px;
             transform: translateX(50px);
