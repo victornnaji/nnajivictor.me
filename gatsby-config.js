@@ -94,10 +94,10 @@ module.exports = {
         }
         `,
         mapping: {
-          Post: {
+          Posts: {
             sitemap: `posts`,
           },
-          Tag: {
+          Tags: {
             sitemap: `tags`,
           }
         },
@@ -109,6 +109,13 @@ module.exports = {
         ],
         createLinkInHead: true,
         addUncaughtPages: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options : {
+        output : `/sitemap-0.xml`,
+        exclude : [`/blog`, `/blog/tags`],
       },
     },
     {
