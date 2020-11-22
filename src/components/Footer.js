@@ -15,7 +15,7 @@ const Footer = () => {
             <div>Designed &amp; Built by Nnaji Victor.</div>
           </StyledGitHubLink>
              <p>Thanks to <a href="https://github.com/bchiang7/v4" target="_blank"
-                rel="nofollow noopener noreferrer">Brittany Chiang</a> for this awesome theme</p>
+                rel="nofollow noopener noreferrer">Brittany Chiang</a> for the inspiration</p>
             </StyledMetadata>
         </StyledContainer>
     )
