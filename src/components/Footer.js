@@ -14,7 +14,7 @@ const Footer = () => {
                 rel="nofollow noopener noreferrer">
             <div>Designed &amp; Built by Nnaji Victor.</div>
           </StyledGitHubLink>
-             <p>Thanks to <a href="https://github.com/bchiang7/v4" target="_blank"
+             <p>Thanks to <a href="https://brittanychiang.com/" target="_blank"
                 rel="nofollow noopener noreferrer">Brittany Chiang</a> for the inspiration</p>
             </StyledMetadata>
         </StyledContainer>
